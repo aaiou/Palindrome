@@ -16,5 +16,28 @@ namespace Palindrome
         {
             InitializeComponent();
         }
+
+        private void buttonCheck_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxInput.Text))
+            {
+                var input = textBoxInput.Text;
+
+                var inputReverse = new String(input.Reverse().ToArray());
+
+                if (inputReverse.ToString() == input.ToString())
+                {
+                    labelPalindrome.Text = "It's a palindrome :)";
+                }
+                else
+                {
+                    labelPalindrome.Text = "It ain't a palindrome!";
+                }
+            }
+            else
+            {
+                labelPalindrome.Text = "Enter something...";
+            }
+        }
     }
 }
